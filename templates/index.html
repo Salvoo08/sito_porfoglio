@@ -29,7 +29,7 @@
     <main class="main">
       <!-- Anteprima della sezione -->
       <section class="main__home home" id="home">
-        <h1 class="home__title">NOME COGNOME</h1>
+        <h1 class="home__title">Salvatore Manta</h1>
         <p class="home__subtitle">WEB-DEVELOPER, PROGRAMMATORE PYTHON</p>
       </section>
       <!-- Sezione "Chi sono" -->
@@ -37,9 +37,10 @@
         <h2 class="about__title">ABOUT ME</h2>
         <div class="about__info info-block">
           <p class="info-block__text">
-            Informare su di me Informare su di me Informare su di me Informare su di me
-            Informare su di me Informare su di me Informare su di me Informare su di me
-            Informare su di me
+            Sono un ragazzo di 15 anni, che da ormai 2 anni si impegna
+            per diventare diventare un bravo PROGRAMMATORE ho creato diversi progetti tra cui:
+             dei siti in python, bot di discord, progetti in html e anche un datebesi
+             altre mie passioni sono: la lettura di fantasy e il gaming 
           </p>
           <img
             class="info-block__img"
@@ -104,14 +105,33 @@
         {% if button_python%}
           <div class="skills__project project" id="project">
               <img class="project__img" src="../static/img/python-project.png" alt="project" width="500">
-              <a class="project__link" href="">Apri con GitHub</a>
+              <a class="project__link" href="">Apri python con GitHub</a>
+          </div>
+        {% endif %}
+
+        {% if button_discord %}
+          <div class="skills__project project" id="project">
+              <img class="project__img" src="../static/img/python-project.png" alt="project" width="500">
+              <a class="project__link" href="">Apri discord con GitHub</a>
+          </div>
+        {% endif %}
+        {% if button_html %}
+          <div class="skills__project project" id="project">
+              <img class="project__img" src="../static/img/python-project.png" alt="project" width="500">
+              <a class="project__link" href="">Apri html con GitHub</a>
+          </div>
+        {% endif %}
+        {% if button_db %}
+          <div class="skills__project project" id="project">
+              <img class="project__img" src="../static/img/python-project.png" alt="project" width="500">
+              <a class="project__link" href="">Apri db con GitHub</a>
           </div>
         {% endif %}
       </section>
       <!-- Modulo di feedback -->
       <section class="main__feedback feedback" id="feedback">
         <h2 class="feedback__title">FEEDBACK</h2>
-        <form action="" method="POST" class="feedback__form form">
+        <form action="{{ url_for('feebacks') }}" method="POST" class="feedback__form form">
           <label for="email">
             <input type="email" class="form__input" name="email" id="email" placeholder="Inserire l'e-mail" required>
           </label>
